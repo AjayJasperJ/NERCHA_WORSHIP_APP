@@ -150,3 +150,40 @@ class _txtfieldState extends State<txtfield> {
     super.dispose();
   }
 }
+
+// final _focus1 = FocusNode();
+// final _focus2 = FocusNode();
+
+// SmartTextFormField(
+//   hintText: 'Email Address',
+//   validator: (value) => value!.contains('@') ? null : 'Invalid email',
+//   focusNode: _focus1,
+//   nextFocusNode: _focus2,
+// ),
+// SmartTextFormField(
+//   hintText: 'Password',
+//   focusNode: _focus2,
+//   obscureText: true,
+// ),
+
+// final _formKey = GlobalKey<FormState>();
+
+// void _submitForm() {
+//   if (_formKey.currentState!.validate()) {
+//     // Handle form submission
+//   }
+// }
+
+// // In build method:
+// Form(
+//   key: _formKey,
+//   child: Column(
+//     children: [
+//       // Your SmartTextFormField widgets
+//       ElevatedButton(
+//         onPressed: _submitForm,
+//         child: const Text('Submit'),
+//       ),
+//     ],
+//   ),
+// );
