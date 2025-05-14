@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
 import 'package:nercha_worship_app/screens/auth/login/login_widget.dart';
+import 'package:nercha_worship_app/screens/auth/other/country_screen.dart';
 import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
 import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
 import 'package:nercha_worship_app/widgets/txt_widget.dart';
@@ -95,10 +95,12 @@ class _OtpScreenState extends State<OtpScreen> {
                   width: displaysize.width,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => OtpScreen()),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CountryScreen(),
+                        ),
+                      );
                     },
                     style: ButtonstyleWidget().elevated_filled_apptheme(),
                     child: Txt(

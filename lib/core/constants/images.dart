@@ -10,4 +10,7 @@ class Constantimages {
 class Constanticons {
   final down_arrow = 'assets/icons/down_arrow.png';
   final left_arrow = 'assets/icons/left_arrow.png';
+  final search = 'assets/icons/search.png';
+  final selected = 'assets/icons/selected.png';
+  final unselect = 'assets/icons/unselect.png';
 }
