@@ -1,0 +1,3 @@
+class Constantimages {}
+
+class Constanticons {}
