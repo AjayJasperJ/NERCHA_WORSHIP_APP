@@ -7,4 +7,7 @@ class Constantimages {
   final facebook_logo = 'assets/images/facebook_logo.png';
 }
 
-class Constanticons {}
+class Constanticons {
+  final down_arrow = 'assets/icons/down_arrow.png';
+  final left_arrow = 'assets/icons/left_arrow.png';
+}

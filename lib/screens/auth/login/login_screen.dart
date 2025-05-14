@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nercha_worship_app/app.dart';
+import 'package:nercha_worship_app/core/constants/colors.dart';
+import 'package:nercha_worship_app/core/constants/images.dart';
+import 'package:nercha_worship_app/screens/auth/login/login_widget.dart';
+import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
+import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
+import 'package:nercha_worship_app/widgets/txt_widget.dart';
 import 'package:nercha_worship_app/widgets/txtfield_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -10,41 +17,115 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _formKey = GlobalKey<FormState>();
-  final _phoneController = TextEditingController();
-
-  String? _validatePhone(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Phone number is required';
-    }
-    if (!RegExp(r'^\d{10}$').hasMatch(value)) {
-      return 'Enter a valid 10-digit phone number';
-    }
-    return null;
-  }
-
-  void _submit() {
-    if (_formKey.currentState?.validate() ?? false) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Valid phone number!')));
-    }
-  }
+  final widgets = LoginWidget();
+  final phone_controller = TextEditingController();
+  final icons = Constanticons();
+  final colors = Constantcolors();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: displaysize.width * .04,
+          vertical: displaysize.height * .02,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            backbutton(boarder: true),
+            SizedBox(height: displaysize.height * .03),
+            Txt(
+              'Enter your phone number',
+              color: colors.nercha_darkblue,
+              size: displaysize.height * .025,
+              font: Font.semiBold,
+            ),
+
+            SizedBox(height: displaysize.height * .02),
+            SizedBox(
+              width: displaysize.width * .8,
+              child: Txt(
+                'Provide your phone number to log in and access your account.',
+                color: colors.nercha_darkblue,
+                size: displaysize.height * .016,
+                font: Font.medium,
+              ),
+            ),
+            SizedBox(height: displaysize.height * .04),
+            txtfield(
+              hintText: 'Phone Number',
+              isPrefix: true,
+              prefixIcon: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  CircleAvatar(radius: displaysize.height * .015),
+                  Txt('+195'),
+                  SizedBox(
+                    height: displaysize.height * .02,
+                    child: Image.asset(icons.down_arrow),
+                  ),
+                ],
+              ),
+              keyboardtype: TextInputType.phone,
+              controller: phone_controller,
+              inputformat: [
+                LengthLimitingTextInputFormatter(10),
+                FilteringTextInputFormatter.digitsOnly,
+              ],
+              validator: widgets.validatePhone,
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: displaysize.height * .15,
         padding: EdgeInsets.symmetric(horizontal: displaysize.width * .04),
-        child: Center(
-          child: txtfield(
-            controller: _phoneController,
-            validator: _validatePhone,
-            hintText: 'phone number',
-            isPrefix: false,
-            prefixIcon: Icon(Icons.app_blocking),
-            suffixIcon: Icon(Icons.key),
-          ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: displaysize.height * .06,
+              width: displaysize.width,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ButtonstyleWidget().elevated_filled_apptheme(),
+                child: Txt(
+                  'Next',
+                  color: colors.nercha_white,
+                  font: Font.medium,
+                  size: displaysize.height * .02,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Center(
+                child: Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: "Don't have an account? ",
+                        style: TextStyle(
+                          fontSize: displaysize.height * .016,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: 'general_sans',
+                        ),
+                      ),
+                      TextSpan(
+                        text: "Sign Up",
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontSize: displaysize.height * .016,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'general_sans',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

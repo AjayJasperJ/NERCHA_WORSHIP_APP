@@ -101,8 +101,15 @@ class _txtfieldState extends State<txtfield> {
                 !(widget.isPrefix ?? false)
                     ? widget.prefixIcon
                     : Container(
-                      width: displaysize.height * .1,
-                      child: Center(child: widget.prefixIcon),
+                      width: displaysize.height * .13,
+                      child: Center(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: displaysize.height * .015,
+                          ),
+                          child: widget.prefixIcon,
+                        ),
+                      ),
                     ),
             suffixIcon: widget.suffixIcon,
             hintText: widget.hintText,
