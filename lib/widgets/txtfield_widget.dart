@@ -99,7 +99,15 @@ class _txtfieldState extends State<txtfield> {
           decoration: InputDecoration(
             prefixIcon:
                 !(widget.isPrefix ?? false)
-                    ? widget.prefixIcon
+                    ? Container(
+                      margin: EdgeInsets.only(
+                        left: displaysize.height * .02,
+                        right: displaysize.height * .005,
+                      ),
+                      height: displaysize.height * .025,
+                      width: displaysize.height * .025,
+                      child: widget.prefixIcon,
+                    )
                     : Container(
                       width: displaysize.height * .13,
                       child: Center(

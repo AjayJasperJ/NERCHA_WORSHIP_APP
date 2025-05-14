@@ -52,12 +52,64 @@ class _CountryScreenState extends State<CountryScreen> {
                 font: Font.medium,
               ),
             ),
-            SizedBox(height: displaysize.height * .04),
+            SizedBox(height: displaysize.height * .02),
             txtfield(
               hintText: 'Search',
-              prefixIcon: SizedBox(height: displaysize.height*.01,
-                child: Image.asset(
-                  icons.search,
+              prefixIcon: Image.asset(icons.search, color: colors.nercha_grey),
+            ),
+            SizedBox(height: displaysize.height * .02),
+            Expanded(
+              child: MediaQuery.removePadding(
+                context: context,
+                removeTop: true,
+                removeLeft: true,
+                removeRight: true,
+                child: ListView.builder(
+                  itemCount: 20,
+                  itemBuilder:
+                      (context, index) => Container(
+                        height: displaysize.height * .075,
+                        margin: EdgeInsets.only(
+                          bottom: displaysize.height * .02,
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: displaysize.height * .02,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: colors.nercha_grey),
+                          borderRadius: BorderRadius.circular(
+                            displaysize.width / 4,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  radius: displaysize.height * .015,
+                                  backgroundColor: colors.nercha_orange_1,
+                                ),
+                                SizedBox(width: displaysize.height * .02),
+                                Txt(
+                                  "country name",
+                                  color: colors.nercha_darkblue,
+                                  size: displaysize.height * .018,
+                                  font: Font.medium,
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: displaysize.height * .025,
+                              width: displaysize.height * .025,
+                              child: Image.asset(
+                                icons.unselect,
+                                color: colors.nercha_grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                 ),
               ),
             ),

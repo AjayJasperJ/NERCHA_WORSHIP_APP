@@ -4,6 +4,7 @@ import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
 import 'package:nercha_worship_app/screens/auth/login/login_widget.dart';
+import 'package:nercha_worship_app/screens/auth/other/country_screen.dart';
 import 'package:nercha_worship_app/screens/auth/other/otp_screen.dart';
 import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
 import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
@@ -57,20 +58,28 @@ class _LoginScreenState extends State<LoginScreen> {
             txtfield(
               hintText: 'Phone Number',
               isPrefix: true,
-              prefixIcon: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  CircleAvatar(
-                    radius: displaysize.height * .015,
-                    backgroundColor: colors.nercha_orange_1,
-                  ),
-                  Txt('+195'),
-                  SizedBox(
-                    height: displaysize.height * .02,
-                    child: Image.asset(icons.down_arrow),
-                  ),
-                ],
+              prefixIcon: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CountryScreen()),
+                  );
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    CircleAvatar(
+                      radius: displaysize.height * .015,
+                      backgroundColor: colors.nercha_orange_1,
+                    ),
+                    Txt('+195'),
+                    SizedBox(
+                      height: displaysize.height * .02,
+                      child: Image.asset(icons.down_arrow),
+                    ),
+                  ],
+                ),
               ),
               keyboardtype: TextInputType.phone,
               controller: phone_controller,
