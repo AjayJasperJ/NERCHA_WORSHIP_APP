@@ -84,9 +84,19 @@ class _AuthScreenState extends State<AuthScreen> {
                 SizedBox(height: displaysize.height * .01),
                 Row(
                   children: [
-                    Expanded(child: Divider()),
+                    Expanded(
+                      child: Divider(
+                        indent: displaysize.height * .01,
+                        endIndent: displaysize.height * .01,
+                      ),
+                    ),
                     Text('Or'),
-                    Expanded(child: Divider()),
+                    Expanded(
+                      child: Divider(
+                        indent: displaysize.height * .01,
+                        endIndent: displaysize.height * .01,
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(height: displaysize.height * .01),
