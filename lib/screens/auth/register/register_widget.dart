@@ -1,6 +1,3 @@
-import 'package:flutter/widgets.dart';
-import 'package:nercha_worship_app/core/constants/images.dart';
-
 class RegisterWidget {
   String? validatename(String? value) {
     if (value == null || value.isEmpty) {

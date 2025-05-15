@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
-import 'package:nercha_worship_app/screens/auth/other/otp_screen.dart';
 import 'package:nercha_worship_app/screens/auth/register/register_widget.dart';
 import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
 import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
