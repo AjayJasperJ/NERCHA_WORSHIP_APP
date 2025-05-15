@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
+import 'package:nercha_worship_app/screens/navigation/home_screen/detail_screen/detail_screen.dart';
 import 'package:nercha_worship_app/widgets/txt_widget.dart';
 
 class HomeWidget {
@@ -77,51 +78,60 @@ class HomeWidget {
         physics: NeverScrollableScrollPhysics(),
         itemCount: 10,
         itemBuilder: (context, index) {
-          return SizedBox(
-            height: displaysize.height * .4,
-            width: displaysize.width,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  height: displaysize.height * .3,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      image: AssetImage(Constantimages().demo2),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(index: index),
                 ),
-                SizedBox(height: displaysize.height * .02),
-                Txt(
-                  "Velankanni Church ",
-                  color: Constantcolors().nercha_darkblue,
-                  size: displaysize.height * .018,
-                  font: Font.medium,
-                ),
-                SizedBox(height: displaysize.height * .01),
-                Row(
-                  children: [
-                    SizedBox(
-                      height: displaysize.height * .018,
-                      width: displaysize.height * .018,
-                      child: Image.asset(
-                        Constanticons().location,
-                        color: Constantcolors().nercha_grey,
+              );
+            },
+            child: Container(
+              width: displaysize.width,
+              margin: EdgeInsets.only(bottom: displaysize.height * .02),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: displaysize.height * .3,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                        image: AssetImage(Constantimages().demo2),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(width: displaysize.width * .01),
-                    Txt(
-                      "Tamil Nadu ",
-                      color: Constantcolors().nercha_grey,
-                      size: displaysize.height * .016,
-                      font: Font.medium,
-                    ),
-                  ],
-                ),
-                SizedBox(height: displaysize.height * .02),
-              ],
+                  ),
+                  SizedBox(height: displaysize.height * .02),
+                  Txt(
+                    "Velankanni Church ",
+                    color: Constantcolors().nercha_darkblue,
+                    size: displaysize.height * .018,
+                    font: Font.medium,
+                  ),
+                  SizedBox(height: displaysize.height * .01),
+                  Row(
+                    children: [
+                      SizedBox(
+                        height: displaysize.height * .018,
+                        width: displaysize.height * .018,
+                        child: Image.asset(
+                          Constanticons().location,
+                          color: Constantcolors().nercha_grey,
+                        ),
+                      ),
+                      SizedBox(width: displaysize.width * .01),
+                      Txt(
+                        "Tamil Nadu ",
+                        color: Constantcolors().nercha_grey,
+                        size: displaysize.height * .016,
+                        font: Font.medium,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           );
         },

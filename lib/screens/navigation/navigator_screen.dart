@@ -4,7 +4,7 @@ import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
 import 'package:nercha_worship_app/screens/navigation/account/account_screen.dart';
 import 'package:nercha_worship_app/screens/navigation/event/event_screen.dart';
-import 'package:nercha_worship_app/screens/navigation/home/home_screen.dart';
+import 'package:nercha_worship_app/screens/navigation/home_screen/home_screen.dart';
 import 'package:nercha_worship_app/screens/navigation/search/search_screen.dart';
 
 class NavigatorScreen extends StatefulWidget {
