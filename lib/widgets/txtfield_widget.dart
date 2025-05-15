@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
+import 'package:nercha_worship_app/widgets/txt_widget.dart';
 
 class txtfield extends StatefulWidget {
   final TextEditingController? controller;
@@ -101,7 +102,7 @@ class _txtfieldState extends State<txtfield> {
                 !(widget.isPrefix ?? false)
                     ? Container(
                       margin: EdgeInsets.only(
-                        left: displaysize.height * .02,
+                        left: displaysize.height * .025,
                         right: displaysize.height * .005,
                       ),
                       height: displaysize.height * .025,
@@ -121,6 +122,10 @@ class _txtfieldState extends State<txtfield> {
                     ),
             suffixIcon: widget.suffixIcon,
             hintText: widget.hintText,
+            hintStyle: TextStyle(
+              color: colors.nercha_grey,
+              fontWeight: Font.medium.weight,
+            ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(displaysize.width / 4),
               borderSide: BorderSide(

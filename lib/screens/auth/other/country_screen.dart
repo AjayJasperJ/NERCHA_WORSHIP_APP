@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
-import 'package:nercha_worship_app/screens/auth/login/login_widget.dart';
 import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
-import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
 import 'package:nercha_worship_app/widgets/txt_widget.dart';
 import 'package:nercha_worship_app/widgets/txtfield_widget.dart';
-import 'package:nercha_worship_app/widgets/txtotpfield_widget.dart';
 
 class CountryScreen extends StatefulWidget {
   const CountryScreen({super.key});
@@ -17,7 +14,6 @@ class CountryScreen extends StatefulWidget {
 }
 
 class _CountryScreenState extends State<CountryScreen> {
-  final widgets = LoginWidget();
   final phone_controller = TextEditingController();
   final icons = Constanticons();
   final colors = Constantcolors();

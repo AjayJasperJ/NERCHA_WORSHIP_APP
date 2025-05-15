@@ -51,17 +51,17 @@ class _txtotpfieldState extends State<txtotpfield> {
     _updateOtp();
   }
 
-  void _handlePaste(String pastedValue) {
-    for (int i = 0; i < pastedValue.length; i++) {
-      if (i < widget.length) {
-        _controllers[i].text = pastedValue[i];
-        if (i == pastedValue.length - 1 && i < widget.length - 1) {
-          _focusNodes[i + 1].requestFocus();
-        }
-      }
-    }
-    _updateOtp();
-  }
+  // void _handlePaste(String pastedValue) {
+  //   for (int i = 0; i < pastedValue.length; i++) {
+  //     if (i < widget.length) {
+  //       _controllers[i].text = pastedValue[i];
+  //       if (i == pastedValue.length - 1 && i < widget.length - 1) {
+  //         _focusNodes[i + 1].requestFocus();
+  //       }
+  //     }
+  //   }
+  //   _updateOtp();
+  // }
 
   void _updateOtp() {
     final newOtp = _controllers.map((c) => c.text).join();
