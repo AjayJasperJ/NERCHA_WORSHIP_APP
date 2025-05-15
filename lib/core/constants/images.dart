@@ -6,6 +6,11 @@ class Constantimages {
   final google_logo = 'assets/images/google_logo.png';
   final facebook_logo = 'assets/images/facebook_logo.png';
   final empty_profile = 'assets/images/empty_profile.png';
+
+  final demo1 = 'assets/images/demo1.png';
+  final demo2 = 'assets/images/demo2.png';
+  final demo3 = 'assets/images/demo3.png';
+  final demo4 = 'assets/images/demo4.png';
 }
 
 class Constanticons {
