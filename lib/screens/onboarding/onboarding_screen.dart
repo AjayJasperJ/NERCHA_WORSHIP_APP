@@ -124,8 +124,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     onPressed: () {
                                       _controller.animateToPage(
                                         index + 1,
-                                        duration: Duration(microseconds: 300),
-                                        curve: Curves.easeInOut,
+                                        duration: Duration(milliseconds: 300),
+                                        curve: Curves.easeIn,
                                       );
                                     },
                                     child: Txt(

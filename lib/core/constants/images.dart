@@ -17,4 +17,22 @@ class Constanticons {
   final person = 'assets/icons/person.png';
   final mail = 'assets/icons/mail.png';
   final location = 'assets/icons/location.png';
+  final account_setting = 'assets/icons/account_setting.png';
+  final bank = 'assets/icons/bank.png';
+  final creditcard = 'assets/icons/creditcard.png';
+  final doc = 'assets/icons/doc.png';
+  final event_fill = 'assets/icons/event_fill.png';
+  final event = 'assets/icons/event.png';
+  final home_fill = 'assets/icons/home_fill.png';
+  final home = 'assets/icons/home.png';
+  final logout = 'assets/icons/logout.png';
+  final message = 'assets/icons/message.png';
+  final msg_alert = 'assets/icons/msg_alert.png';
+  final phone = 'assets/icons/phone.png';
+  final right_arrow = 'assets/icons/right_arrow.png';
+  final security = 'assets/icons/security.png';
+  final setting_fill = 'assets/icons/setting_fill.png';
+  final setting = 'assets/icons/setting.png';
+  final share = 'assets/icons/share.png';
+  final upi = 'assets/icons/upi.png';
 }
