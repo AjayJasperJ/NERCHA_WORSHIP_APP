@@ -47,6 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(widgets.Onboarding_data[index]['image']),
+                  fit: BoxFit.cover,
                 ),
               ),
               child: Column(
