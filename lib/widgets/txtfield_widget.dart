@@ -123,8 +123,9 @@ class _txtfieldState extends State<txtfield> {
             suffixIcon: widget.suffixIcon,
             hintText: widget.hintText,
             hintStyle: TextStyle(
-              color: colors.nercha_grey,
+              color: colors.nercha_grey_1,
               fontWeight: Font.medium.weight,
+              fontSize: displaysize.height * .016,
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(displaysize.width / 4),

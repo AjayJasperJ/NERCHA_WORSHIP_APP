@@ -67,7 +67,7 @@ class DetailWidget {
         vertical: displaysize.height * .02,
       ),
       decoration: BoxDecoration(
-        color: apptheme_light_background,
+        color: Constantcolors().nercha_orange_3,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
+import 'package:nercha_worship_app/screens/navigation/home_screen/booknow_screen/booknow_screen.dart';
 import 'package:nercha_worship_app/screens/navigation/home_screen/detail_screen/detail_widget.dart';
 import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
+import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
 import 'package:nercha_worship_app/widgets/txt_widget.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -55,29 +57,58 @@ class _DetailScreenState extends State<DetailScreen> {
                           ),
                         ),
                         SizedBox(height: displaysize.height * .02),
-                        Txt(
-                          "Velankanni Church ",
-                          color: Constantcolors().nercha_darkblue,
-                          size: displaysize.height * .02,
-                          font: Font.medium,
-                        ),
-                        SizedBox(height: displaysize.height * .01),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            SizedBox(
-                              height: displaysize.height * .018,
-                              width: displaysize.height * .018,
-                              child: Image.asset(
-                                Constanticons().location,
-                                color: Constantcolors().nercha_grey,
-                              ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Txt(
+                                  "Velankanni Church ",
+                                  color: Constantcolors().nercha_darkblue,
+                                  size: displaysize.height * .02,
+                                  font: Font.medium,
+                                ),
+                                SizedBox(height: displaysize.height * .01),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      height: displaysize.height * .018,
+                                      width: displaysize.height * .018,
+                                      child: Image.asset(
+                                        Constanticons().location,
+                                        color: Constantcolors().nercha_grey,
+                                      ),
+                                    ),
+                                    SizedBox(width: displaysize.width * .01),
+                                    Txt(
+                                      "Tamil Nadu ",
+                                      color: Constantcolors().nercha_grey,
+                                      size: displaysize.height * .016,
+                                      font: Font.medium,
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
-                            SizedBox(width: displaysize.width * .01),
-                            Txt(
-                              "Tamil Nadu ",
-                              color: Constantcolors().nercha_grey,
-                              size: displaysize.height * .016,
-                              font: Font.medium,
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BooknowScreen(),
+                                  ),
+                                );
+                              },
+                              style:
+                                  ButtonstyleWidget()
+                                      .elevated_filled_apptheme(),
+                              child: Txt(
+                                "Book Now ",
+                                color: Constantcolors().nercha_white,
+                                size: displaysize.height * .016,
+                                font: Font.medium,
+                              ),
                             ),
                           ],
                         ),

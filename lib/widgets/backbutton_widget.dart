@@ -111,7 +111,7 @@ class backbutton extends StatelessWidget {
                 ? Txt(
                   title ?? '',
                   color: colors.nercha_darkblue,
-                  size: displaysize.height * .02,
+                  size: displaysize.height * .025,
                   font: Font.medium,
                 )
                 : SizedBox.shrink(),

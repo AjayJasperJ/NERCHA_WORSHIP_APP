@@ -11,6 +11,7 @@ class Constantimages {
   final demo2 = 'assets/images/demo2.png';
   final demo3 = 'assets/images/demo3.png';
   final demo4 = 'assets/images/demo4.png';
+  final hindu = 'assets/images/hindu.png';
 }
 
 class Constanticons {
