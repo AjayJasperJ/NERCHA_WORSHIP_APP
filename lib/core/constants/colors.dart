@@ -12,7 +12,7 @@ class Constantcolors {
 
   /*  Grey  */
   Color nercha_grey = Color.fromRGBO(204, 204, 204, 1);
-  
+  Color nercha_grey_1 = Color.fromRGBO(127, 127, 127, 1);
 
   /*  White  */
   Color nercha_white = Colors.white;

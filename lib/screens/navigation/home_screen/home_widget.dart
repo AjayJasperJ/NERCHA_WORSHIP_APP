@@ -89,6 +89,7 @@ class HomeWidget {
             },
             child: Container(
               width: displaysize.width,
+              color: Colors.white.withValues(alpha: 0),
               margin: EdgeInsets.only(bottom: displaysize.height * .02),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
