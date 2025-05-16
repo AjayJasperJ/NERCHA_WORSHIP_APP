@@ -3,6 +3,8 @@ import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
 import 'package:nercha_worship_app/screens/auth/login/login_screen.dart';
+import 'package:nercha_worship_app/screens/auth/register/register_screen.dart';
+import 'package:nercha_worship_app/screens/navigation/navigator_screen.dart';
 import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
 import 'package:nercha_worship_app/widgets/txt_widget.dart';
 
@@ -77,7 +79,14 @@ class _AuthScreenState extends State<AuthScreen> {
                   height: displaysize.height * .06,
                   width: displaysize.width,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterScreen(),
+                        ),
+                      );
+                    },
                     style: ButtonstyleWidget().elevated_boardered_apptheme(),
                     child: Txt(
                       'Sign Up',

@@ -37,12 +37,31 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             ),
             SizedBox(height: displaysize.height * .08),
             Center(
-              child: Container(
-                height: displaysize.height * .2,
-                width: displaysize.height * .2,
-                decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage(images.demo4)),
-                ),
+              child: Stack(
+                children: [
+                  Container(
+                    height: displaysize.height * .2,
+                    width: displaysize.height * .2,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage(images.demo4)),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: CircleAvatar(
+                      radius: displaysize.height * .03,
+                      backgroundColor: colors.nercha_orange_2,
+                      child: Center(
+                        child: Image.asset(
+                          icons.edit_profile,
+                          color: colors.nercha_white,
+                          height: displaysize.height * .025,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(height: displaysize.height * .02),
@@ -75,12 +94,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   width: displaysize.width * .45,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => EditProfileScreen(),
-                        ),
-                      );
+                      Navigator.pop(context);
                     },
                     style: ButtonstyleWidget().elevated_boardered_apptheme(),
                     child: Txt(
@@ -95,14 +109,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   height: displaysize.height * .06,
                   width: displaysize.width * .45,
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => EditProfileScreen(),
-                        ),
-                      );
-                    },
+                    onPressed: () {},
                     style: ButtonstyleWidget().elevated_filled_apptheme(),
                     child: Txt(
                       'Update',

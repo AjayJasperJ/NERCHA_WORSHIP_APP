@@ -41,4 +41,5 @@ class Constanticons {
   final setting = 'assets/icons/setting.png';
   final share = 'assets/icons/share.png';
   final upi = 'assets/icons/upi.png';
+  final edit_profile = 'assets/icons/edit_profile.png';
 }

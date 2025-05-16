@@ -3,6 +3,7 @@ import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
 import 'package:nercha_worship_app/screens/auth/register/register_screen.dart';
+import 'package:nercha_worship_app/screens/navigation/navigator_screen.dart';
 import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
 import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
 import 'package:nercha_worship_app/widgets/txt_widget.dart';
@@ -96,7 +97,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RegisterScreen(),
+                          builder: (context) => NavigatorScreen(),
                         ),
                       );
                     },
