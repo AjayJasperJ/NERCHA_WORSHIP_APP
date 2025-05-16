@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nercha_worship_app/app.dart';
 import 'package:nercha_worship_app/core/constants/colors.dart';
 import 'package:nercha_worship_app/core/constants/images.dart';
-import 'package:nercha_worship_app/screens/navigation/home_screen/booknow_screen/booking_screen.dart';
+import 'package:nercha_worship_app/screens/navigation/home_screen/book_screen/booking_screen.dart';
 import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
 import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
 import 'package:nercha_worship_app/widgets/txt_widget.dart';

@@ -5,41 +5,47 @@ import 'package:nercha_worship_app/core/constants/images.dart';
 import 'package:nercha_worship_app/widgets/backbutton_widget.dart';
 import 'package:nercha_worship_app/widgets/buttonstyle_widget.dart';
 import 'package:nercha_worship_app/widgets/txt_widget.dart';
-import 'package:nercha_worship_app/widgets/txtfield_widget.dart';
 
-class BookingScreen extends StatefulWidget {
+class PaymentMethodScreen extends StatefulWidget {
   final int index;
 
-  const BookingScreen({super.key, required this.index});
+  const PaymentMethodScreen({super.key, required this.index});
 
   @override
-  State<BookingScreen> createState() => _BookingScreenState();
+  State<PaymentMethodScreen> createState() => _PaymentMethodScreenState();
 }
 
-class _BookingScreenState extends State<BookingScreen> {
+class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
   final icons = Constanticons();
   final colors = Constantcolors();
   final images = Constantimages();
+
+  int currentindex = 0;
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> booking_data = [
-      {'icon': icons.event, 'hint': 'Date'},
-      {'icon': icons.person, 'hint': 'Name'},
-      {'icon': icons.location, 'hint': 'Address'},
+    List<Map<String, dynamic>> paymentdata_method = [
+      {'icon': icons.upi, 'hint': 'UPI'},
+      {'icon': icons.creditcard, 'hint': 'Credit/Debit Card'},
+      {'icon': icons.bank, 'hint': 'Net Banking'},
     ];
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: displaysize.width * .04),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            backbutton(boarder: true, title: 'Booking', centeredtitle: true),
+            backbutton(
+              boarder: true,
+              title: 'Payment Methods',
+              centeredtitle: true,
+            ),
             SizedBox(height: displaysize.height * .03),
             Container(
               padding: EdgeInsets.symmetric(
                 horizontal: displaysize.height * .02,
                 vertical: displaysize.height * .02,
               ),
-              height: displaysize.height * .2,
+              height: displaysize.height * .25,
               width: displaysize.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -48,6 +54,12 @@ class _BookingScreenState extends State<BookingScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Txt(
+                    '12/12/2025',
+                    color: Constantcolors().nercha_darkblue,
+                    size: displaysize.height * .02,
+                    font: Font.semiBold,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -123,17 +135,75 @@ class _BookingScreenState extends State<BookingScreen> {
                 ],
               ),
             ),
+            SizedBox(height: displaysize.height * .03),
+            Txt(
+              'Payment Methods',
+              color: Constantcolors().nercha_darkblue,
+              size: displaysize.height * .025,
+              font: Font.medium,
+            ),
+            SizedBox(height: displaysize.height * .02),
             Column(
               children: List.generate(3, (index) {
                 return Column(
                   children: [
-                    SizedBox(height: displaysize.height * .03),
-                    txtfield(
-                      prefixIcon: Image.asset(
-                        booking_data[index]['icon'],
-                        color: colors.nercha_grey_1,
+                    SizedBox(height: displaysize.height * .015),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          currentindex = index;
+                        });
+                      },
+                      child: Container(
+                        height: displaysize.height * .11,
+                        width: displaysize.width,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: displaysize.width * .04,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color:
+                              index == currentindex
+                                  ? colors.nercha_orange_3
+                                  : colors.nercha_white,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(
+                                  height: displaysize.height * .025,
+                                  width: displaysize.height * .025,
+                                  child: Image.asset(
+                                    paymentdata_method[index]['icon'],
+                                  ),
+                                ),
+                                SizedBox(width: displaysize.height * .02),
+                                Txt(
+                                  paymentdata_method[index]['hint'],
+                                  color: Constantcolors().nercha_darkblue,
+                                  size: displaysize.height * .018,
+                                  font: Font.medium,
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: displaysize.height * .025,
+                              width: displaysize.height * .025,
+                              child: Image.asset(
+                                currentindex == index
+                                    ? icons.selected
+                                    : icons.unselect,
+                                color:
+                                    currentindex == index
+                                        ? colors.nercha_orange_2
+                                        : colors.nercha_grey,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      hintText: booking_data[index]['hint'],
                     ),
                   ],
                 );
@@ -154,7 +224,7 @@ class _BookingScreenState extends State<BookingScreen> {
                 onPressed: () {},
                 style: ButtonstyleWidget().elevated_filled_apptheme(),
                 child: Txt(
-                  'Proceed',
+                  'Pay ${widget.index * 1000}/-',
                   color: colors.nercha_white,
                   font: Font.medium,
                   size: displaysize.height * .02,
